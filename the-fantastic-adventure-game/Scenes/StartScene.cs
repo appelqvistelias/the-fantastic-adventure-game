@@ -1,4 +1,3 @@
-using System;
 using TextAdventure.Text;
 using TextAdventure.Utils;
 
