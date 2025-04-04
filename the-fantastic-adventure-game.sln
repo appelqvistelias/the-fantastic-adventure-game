@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "the-fantastic-adventure-game", "the-fantastic-adventure-game\the-fantastic-adventure-game.csproj", "{D354EE1B-AA34-4622-AC66-69C73986E346}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D354EE1B-AA34-4622-AC66-69C73986E346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D354EE1B-AA34-4622-AC66-69C73986E346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D354EE1B-AA34-4622-AC66-69C73986E346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D354EE1B-AA34-4622-AC66-69C73986E346}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
