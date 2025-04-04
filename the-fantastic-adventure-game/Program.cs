@@ -1,4 +1,4 @@
-﻿using TextAdventure.Scene;
+﻿using the_fantastic_adventure_game.Scene;
 
 class Program
 {

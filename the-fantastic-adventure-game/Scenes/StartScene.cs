@@ -1,7 +1,7 @@
-using TextAdventure.Text;
-using TextAdventure.Utils;
+using the_fantastic_adventure_game.Text;
+using the_fantastic_adventure_game.Utils;
 
-namespace TextAdventure.Scene
+namespace the_fantastic_adventure_game.Scene
 {
     public class StartScene
     {

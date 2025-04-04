@@ -1,4 +1,4 @@
-namespace TextAdventure.Text
+namespace the_fantastic_adventure_game.Text
 {
     public class StartText
     {
@@ -13,6 +13,8 @@ namespace TextAdventure.Text
         public void ShowBeginning()
         {
             Console.WriteLine("You have chosen to begin your adventure...");
+            Console.WriteLine("You see before you:");
+            
             // Add what happens next!
         }
     }

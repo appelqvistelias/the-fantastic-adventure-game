@@ -1,4 +1,4 @@
-namespace TextAdventure.Utils
+namespace the_fantastic_adventure_game.Utils
 {
     public static class GameUtils
     {
