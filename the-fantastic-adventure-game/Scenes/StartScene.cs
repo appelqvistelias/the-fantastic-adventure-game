@@ -22,7 +22,6 @@ namespace the_fantastic_adventure_game.Scene
                     case "1":
                         startText.ShowBeginning();
                         SelectScene();
-                        gameRunning = false;
                         break;
                     case "2":
                         GameUtils.ShowExitMessage();
@@ -40,8 +39,9 @@ namespace the_fantastic_adventure_game.Scene
             Console.WriteLine("\nChoose a location to explore:");
             Console.WriteLine("1. The Village of Eldermoor");
             Console.WriteLine("2. The Dark Forest");
+            Console.WriteLine("3. Mysterious Cave");
 
-            int selection = GameUtils.GetValidInput(1, 2);
+            int selection = GameUtils.GetValidInput(1, 3);
 
             switch (selection)
             {
@@ -50,6 +50,9 @@ namespace the_fantastic_adventure_game.Scene
                     break;
                 case 2:
                     Console.WriteLine("The Forest is still being discovered. Check back later!");
+                    break;
+                case 3:
+                    Console.WriteLine("The Cave is still being discovered. Check back later!");
                     break;
             }
         }
