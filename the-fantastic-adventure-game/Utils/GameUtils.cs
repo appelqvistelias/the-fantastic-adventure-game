@@ -11,5 +11,28 @@ namespace the_fantastic_adventure_game.Utils
         {
             Console.WriteLine("Thank you for playing The Fantastic Adventure Game. Goodbye!");
         }
+
+        public static int GetValidInput(int min, int max)
+        {
+            int choice;
+            bool valid = false;
+
+            do
+            {
+                Console.Write("> ");
+                string? input = Console.ReadLine();
+
+                if (int.TryParse(input, out choice) && choice >= min && choice <= max)
+                {
+                    valid = true;
+                }
+                else
+                {
+                    ShowInvalidChoice();
+                }
+            } while (!valid);
+
+            return choice;
+        }
     }
 }
