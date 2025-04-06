@@ -5,6 +5,6 @@ class Program
     static void Main(string[] args)
     {
         StartScene startScene = new StartScene();
-        startScene.StartGame();
+        startScene.StartGame(); // Run StartGame() method from the StartScene class
     }
 }
