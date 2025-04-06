@@ -1,6 +1,7 @@
 using the_fantastic_adventure_game.Text;
 using the_fantastic_adventure_game.Utils;
 using the_fantastic_adventure_game.Scenes;
+using the_fantastic_adventure_game.SceneTextContent;
 
 namespace the_fantastic_adventure_game.Scene
 {
@@ -49,7 +50,7 @@ namespace the_fantastic_adventure_game.Scene
                     VillageScene.Play();
                     break;
                 case 2:
-                    Console.WriteLine("The Forest is still being discovered. Check back later!");
+                    ForestScene.Play();
                     break;
                 case 3:
                     Console.WriteLine("The Cave is still being discovered. Check back later!");
