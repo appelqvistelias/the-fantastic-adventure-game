@@ -1,31 +1,56 @@
 using the_fantastic_adventure_game.Text;
 using the_fantastic_adventure_game.Utils;
+using the_fantastic_adventure_game.Scenes;
 
 namespace the_fantastic_adventure_game.Scene
 {
     public class StartScene
     {
-        private StartText startText = new StartText();
+        private readonly StartText startText = new StartText();
 
         public void StartGame()
         {
-            startText.ShowIntro();
-            string choice = Console.ReadLine();
+            bool gameRunning = true;
 
-            if (choice == "1")
+            while (gameRunning)
             {
-                startText.ShowBeginning();
-                // Add transition to next location
+                startText.ShowIntro();
+                string? choice = Console.ReadLine()?.Trim();
+
+                switch (choice)
+                {
+                    case "1":
+                        startText.ShowBeginning();
+                        SelectScene();
+                        gameRunning = false;
+                        break;
+                    case "2":
+                        GameUtils.ShowExitMessage();
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        GameUtils.ShowInvalidChoice();
+                        break;
+                }
             }
-            else if (choice == "2")
+        }
+
+        private void SelectScene()
+        {
+            Console.WriteLine("\nChoose a location to explore:");
+            Console.WriteLine("1. The Village of Eldermoor");
+            Console.WriteLine("2. The Dark Forest");
+
+            int selection = GameUtils.GetValidInput(1, 2);
+
+            switch (selection)
             {
-                GameUtils.ShowExitMessage();
-                Environment.Exit(0);
-            }
-            else
-            {
-                GameUtils.ShowInvalidChoice();
-                StartGame(); // Restart the game start, change to reverse later
+                case 1:
+                    VillageScene.Play();
+                    break;
+                case 2:
+                    Console.WriteLine("The Forest is still being discovered. Check back later!");
+                    break;
             }
         }
     }

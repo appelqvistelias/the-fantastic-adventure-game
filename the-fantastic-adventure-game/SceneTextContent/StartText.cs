@@ -4,6 +4,7 @@ namespace the_fantastic_adventure_game.Text
     {
         public void ShowIntro()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to The Fantastic Adventure Game!");
             Console.WriteLine("You are about to embark on a fantastic adventure!");
             Console.WriteLine("1. Start the adventure");
@@ -12,10 +13,9 @@ namespace the_fantastic_adventure_game.Text
 
         public void ShowBeginning()
         {
-            Console.WriteLine("You have chosen to begin your adventure...");
-            Console.WriteLine("You see before you:");
-            
-            // Add what happens next!
+            Console.Clear();
+            Console.WriteLine("Your journey begins...");
+            Console.WriteLine("Before you lie multiple paths, each filled with mystery and danger.");
         }
     }
 }
