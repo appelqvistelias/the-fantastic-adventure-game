@@ -53,7 +53,7 @@ namespace the_fantastic_adventure_game.Scene
                     ForestScene.Play();
                     break;
                 case 3:
-                    Console.WriteLine("The Cave is still being discovered. Check back later!");
+                    CaveScene.Play();
                     break;
             }
         }
