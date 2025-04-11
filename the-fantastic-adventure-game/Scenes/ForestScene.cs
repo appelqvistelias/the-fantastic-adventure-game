@@ -25,7 +25,7 @@ public class ForestScene
         Console.WriteLine(ForestText.Reward);
         Console.WriteLine("\nPress any key to return to the main menu.");
         Console.ReadKey();
-        return true; // Finnished the Village, but still return to main menu.
+        return true; // Finished the Village, but still return to main menu.
     }
 
     private static bool HandleStage(int stage)
