@@ -1,7 +1,6 @@
 using the_fantastic_adventure_game.Text;
 using the_fantastic_adventure_game.Utils;
 using the_fantastic_adventure_game.Scenes;
-using the_fantastic_adventure_game.SceneTextContent;
 
 namespace the_fantastic_adventure_game.Scene
 {
@@ -39,8 +38,9 @@ namespace the_fantastic_adventure_game.Scene
         {
             Console.WriteLine("\nChoose a location to explore:");
             Console.WriteLine("1. The Village of Eldermoor");
-            Console.WriteLine("2. The Dark Forest");
-            Console.WriteLine("3. Mysterious Cave");
+            Console.WriteLine("2. The Dark Forest of Shadow Wood");
+            Console.WriteLine("3. Murmurdeep, the Mysterious Cave");
+            Console.WriteLine("4. The Murky Lake of Somberveil");
 
             int selection = GameUtils.GetValidInput(1, 3);
 
@@ -54,6 +54,9 @@ namespace the_fantastic_adventure_game.Scene
                     break;
                 case 3:
                     CaveScene.Play();
+                    break;
+                case 4:
+                    LakeScene.Play();
                     break;
             }
         }
