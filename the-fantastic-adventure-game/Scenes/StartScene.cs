@@ -42,7 +42,7 @@ namespace the_fantastic_adventure_game.Scene
             Console.WriteLine("3. Murmurdeep, the Mysterious Cave");
             Console.WriteLine("4. The Murky Lake of Somberveil");
 
-            int selection = GameUtils.GetValidInput(1, 3);
+            int selection = GameUtils.GetValidInput(1, 4);
 
             switch (selection)
             {
