@@ -56,9 +56,10 @@ public class StartScene
             Console.WriteLine("2. The Dark Forest of Shadow Wood");
             Console.WriteLine("3. Murmurdeep, the Mysterious Cave");
             Console.WriteLine("4. The Murky Lake of Somberveil");
-            Console.WriteLine("5. Return to Main Menu");
+            Console.WriteLine("5. ???");
+            Console.WriteLine("6. Return to Main Menu");
 
-            int selection = GameUtils.GetValidInput(1, 5);
+            int selection = GameUtils.GetValidInput(1, 6);
 
             switch (selection)
             {
@@ -121,8 +122,25 @@ public class StartScene
                     }
 
                     break;
-
+                
                 case 5:
+                    if (GameUtils.HasItem("Aegis of the Shattered Sun") &&
+                        GameUtils.HasItem("Mystical Forest Crystal Crown") &&
+                        GameUtils.HasItem("Shadowfang Blade") &&
+                        GameUtils.HasItem("Panoply of the Drowned King"))
+                    {
+                        Console.WriteLine("\nYou feel a strange pull... something greater awaits.");
+                        // Add final encounter
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nNothing happens. Perhaps you're not ready yet...");
+                        Console.WriteLine("Press any key to choose another location.");
+                        Console.ReadKey();
+                    }
+                    break;
+
+                case 6:
                     selecting = false;
                     break;
             }
