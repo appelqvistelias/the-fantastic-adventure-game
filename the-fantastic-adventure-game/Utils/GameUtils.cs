@@ -5,6 +5,49 @@ namespace the_fantastic_adventure_game.Utils
 {
     public static class GameUtils
     {
+        public static bool PlayScene(
+            string intro,
+            string death, 
+            string reward,
+            Func<int, string> getScenarioText,
+            Func<int, int, string> getOptionText,
+            Func<int, int, bool> isCorrectChoice,
+            Item rewardItem,
+            int stageCount)
+        {
+            Console.Clear();
+            Console.WriteLine(intro);
+            Console.WriteLine();
+
+            for (int stage = 1; stage <= stageCount; stage++)
+            {
+                Console.WriteLine($"--- Scenario {stage} ---");
+                Console.WriteLine(getScenarioText(stage));
+
+                Console.WriteLine("\nWhat is your action?");
+                Console.WriteLine("1. " + getOptionText(stage, 1));
+                Console.WriteLine("2. " + getOptionText(stage, 2));
+                Console.WriteLine("3. " + getOptionText(stage, 3));
+                Console.WriteLine("4. " + getOptionText(stage, 4));
+
+                int choice = GetValidInput(1, 4);
+                
+                if (!isCorrectChoice(stage, choice))
+                {
+                    Console.WriteLine(death);
+                    Console.WriteLine("\nPress any key to return to the main menu.");
+                    Console.ReadKey();
+                    return false; // Return to main menu
+                }
+            }
+
+            Console.WriteLine(reward);
+            AddToInventory(rewardItem);
+            Console.WriteLine("\nPress any key to return to the main menu.");
+            Console.ReadKey();
+            return true; // Finished the scene
+        }
+        
         private static List<Item> Inventory = new();
 
         public static void AddToInventory(Item item)
