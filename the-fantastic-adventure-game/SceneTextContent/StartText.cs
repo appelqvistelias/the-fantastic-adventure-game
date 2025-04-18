@@ -5,7 +5,7 @@ namespace the_fantastic_adventure_game.Text
         public void ShowIntro()
         {
             Console.Clear();
-
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine(@"
  __          __  _                            _                                  
  \ \        / / | |                          | |                                 
@@ -26,12 +26,17 @@ namespace the_fantastic_adventure_game.Text
                                                                                  
 ");
 
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("You are about to embark on a fantastic adventure!");
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("1. Start the adventure");
             Console.WriteLine("2. Show inventory");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("3. Empty inventory");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("4. Exit the game");
+            Console.ResetColor();
         }
 
 

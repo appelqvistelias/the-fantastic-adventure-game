@@ -30,8 +30,8 @@ public class FinalEncounter
             Console.WriteLine($"{enemy.Name}'s Health: {enemy.Health}");
 
             Console.WriteLine("\n1. Attack! Strike with all your fury!");
-            if (!defenseIncreased) Console.WriteLine("2. Call upon the might of the Aegis of the Shattered Sun and the aquatic powers of the Panoply of the Drowned King");
-            if (!damageIncreased) Console.WriteLine("3. Use the Mystical Forest Crystal Crown to fill your soul with the fury of nature and the dark powers of the Shadowfang Blade");
+            if (!defenseIncreased) Console.WriteLine("2. Call upon the might of the Aegis of the Shattered Sun and the aquatic powers of the Panoply of the Drowned King!");
+            if (!damageIncreased) Console.WriteLine("3. Use the Mystical Forest Crystal Crown to fill your soul with the fury of nature and the dark powers of the Shadowfang Blade!");
 
             int choice = GameUtils.GetValidInput(1, 3);
 
@@ -57,7 +57,7 @@ public class FinalEncounter
             {
                 player.AttackDamage += 20;
                 damageIncreased = true;
-                Console.WriteLine("\nYour strikes thunder with the might of the forests and shadows!");
+                Console.WriteLine("\nYour strikes thunder with the might of the forests and darkness!");
             }
 
             Console.WriteLine("\nPress any key to continue...");
@@ -67,21 +67,24 @@ public class FinalEncounter
         Console.Clear();
         if (player.Health > 0)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("You have defeated the Dark Warden!");
             Console.WriteLine("\nThe shadowy figure collapses to the ground, its dark energy dissipating into the air.");
             Console.WriteLine("The arena falls silent, as if the world itself is holding its breath.");
             Console.WriteLine("For a moment, it seems as though the very fabric of reality is unraveling.");
-            Console.WriteLine("\nWith a final, victorious cry, you raise your weapon high. The light from your sword shines brighter than ever before.");
+            Console.WriteLine("\nWith a final, victorious cry, you raise your weapon high. The light from your shield shines brighter than ever before.");
             Console.WriteLine("You have overcome your greatest challenge, and the darkness that threatened the land has been banished.");
             Console.WriteLine("\nThe cheers of unseen voices echo in your ears, and the air is filled with the sweet scent of victory.");
             Console.WriteLine("You have proven yourself, the true hero, worthy of the title... and the world is saved.");
             Console.WriteLine("\nPress any key to continue and leave your belongings behind...");
+            Console.ResetColor();
             Console.ReadKey();
             GameUtils.ClearInventory();
             Console.ReadKey();
         }
         else
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("You have been defeated. The darkness consumes you...");
             Console.WriteLine("\nThe world around you begins to fade, the arena dissolving into shadows.");
             Console.WriteLine("Your body feels heavy, as though the very essence of life is being drained from you.");
@@ -94,6 +97,7 @@ public class FinalEncounter
             Console.WriteLine("\nWith a deep breath, you awaken once more, reborn, ready to face the challenge again.");
             Console.WriteLine("Your heart beats with renewed determination — the fight is not over yet. You will rise again.");
             Console.WriteLine("\nPress any key to continue...");
+            Console.ResetColor();
             Console.ReadKey();
         }
     }

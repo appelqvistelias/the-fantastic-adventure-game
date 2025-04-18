@@ -22,26 +22,26 @@ public static class VillageText
         { (1, 1), "Inspect the statue closely" },
         { (1, 2), "Ask the villagers about the shadow" },
         { (1, 3), "Climb onto a rooftop to get a better view" },
-        { (1, 4), "Follow a trail of black feathers into an alley" }, // Correct one
+        { (1, 4), "Follow a trail of black feathers into an alley" },
 
         { (2, 1), "Talk to the old woman" },
-        { (2, 2), "Ignore her and continue down the street" }, // Correct one
+        { (2, 2), "Ignore her and continue down the street" },
         { (2, 3), "Ask the old woman about the shadow" },
         { (2, 4), "Offer her a coin for information" },
 
         { (3, 1), "Enter the house cautiously" }, 
         { (3, 2), "Knock on the door to ask if anyone is home" },
         { (3, 3), "Wait outside and listen for any strange noises" },
-        { (3, 4), "Leave the house and head back" }, // Correct one
+        { (3, 4), "Leave the house and head back" },
 
         { (4, 1), "Walk into the forest and follow the lights" },
         { (4, 2), "Ignore the lights and turn back" },
         { (4, 3), "Shout into the forest to see if anyone responds" },
-        { (4, 4), "Follow the lights but stay at the edge of the trees" }, // Correct one
+        { (4, 4), "Follow the lights but stay at the edge of the trees" },
 
         { (5, 1), "Look into the well to see what is at the bottom" },
         { (5, 2), "Throw a stone into the well to see if anything happens" },
-        { (5, 3), "Reach into the well to grab whatever is at the bottom" }, // Correct one
+        { (5, 3), "Reach into the well to grab whatever is at the bottom" },
         { (5, 4), "Leave the well and walk away" }
     };
 

@@ -26,24 +26,24 @@ public class CaveText
         { (1, 1), "Strike one of the crystal pillars to test its resonance" },
         { (1, 2), "Step into the center of the Nexus and shout to awaken the cave" },
         { (1, 3), "Listen carefully to the humming crystals to discern a melody" },
-        { (1, 4), "Carve your name into one of the crystal bases for luck" }, // Correct one
+        { (1, 4), "Carve your name into one of the crystal bases for luck" },
 
         { (2, 1), "Attempt to remove the blindfold from the sentinel statue" },
         { (2, 2), "Place your hand in the statue’s open palm to prove your intent" },
-        { (2, 3), "Speak to the statue, requesting safe passage through the cave" }, // Correct one
+        { (2, 3), "Speak to the statue, requesting safe passage through the cave" },
         { (2, 4), "Leave a coin or trinket as an offering at its feet" },
 
         { (3, 1), "Drink from the still water to absorb the whispers" },
         { (3, 2), "Throw a stone into the lake to disrupt the silence" },
-        { (3, 3), "Watch the reflections closely and follow where they shift" }, // Correct one
+        { (3, 3), "Watch the reflections closely and follow where they shift" },
         { (3, 4), "Swim across to the opposite bank, ignoring the whispers" },
 
-        { (4, 1), "Light the brazier with a piece of your own cloth" }, // Correct one
+        { (4, 1), "Light the brazier with a piece of your own cloth" },
         { (4, 2), "Examine the symbols on the spires without disturbing anything" },
         { (4, 3), "Knock over one of the spires to uncover what's beneath" },
         { (4, 4), "Take ash from the brazier and mark your forehead with it" },
 
-        { (5, 1), "Kneel beside the skeleton and whisper a respectful prayer" }, // Correct one
+        { (5, 1), "Kneel beside the skeleton and whisper a respectful prayer" },
         { (5, 2), "Inspect the altar for hidden compartments or relics" },
         { (5, 3), "Remove the robes from the skeleton to examine them" },
         { (5, 4), "Challenge the spirit of the fallen to prove your worth" }

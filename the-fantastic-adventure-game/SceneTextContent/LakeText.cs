@@ -24,27 +24,27 @@ public class LakeText
     private static readonly Dictionary<(int, int), string> OptionTexts = new()
     {
         { (1, 1), "Step into the water and touch one of the rune stones" },
-        { (1, 2), "Sit by the stones and mimic the melody carried by the wind" }, // Correct one
+        { (1, 2), "Sit by the stones and mimic the melody carried by the wind" },
         { (1, 3), "Cast a stone into the middle of the ring to test the water's reaction" },
         { (1, 4), "Walk around the ring three times, whispering your name each lap" },
 
         { (2, 1), "Drink from the bowl beneath the willow tree" },
         { (2, 2), "Kneel and speak your name into the tree’s reflection" },
-        { (2, 3), "Place a token or keepsake into the water-filled bowl" }, // Correct one
+        { (2, 3), "Place a token or keepsake into the water-filled bowl" },
         { (2, 4), "Snap a branch from the willow and keep it for protection" },
 
         { (3, 1), "Wear the driftwood mask to take on the lake’s identity" },
         { (3, 2), "Clap loudly to break the silence and test the acoustics" },
-        { (3, 3), "Sit in silence and observe the lake’s surface closely" }, // Correct one
+        { (3, 3), "Sit in silence and observe the lake’s surface closely" },
         { (3, 4), "Throw the mask into the lake as an offering" },
 
         { (4, 1), "Wake the hooded figure and ask for safe passage" },
-        { (4, 2), "Quietly sit in the boat and wait for it to begin moving" }, // Correct one
+        { (4, 2), "Quietly sit in the boat and wait for it to begin moving" },
         { (4, 3), "Attempt to steer the boat using the bone oar yourself" },
         { (4, 4), "Sing an old lake shanty to summon ancient guidance" },
 
         { (5, 1), "Place your hand on the mural to relive its history" },
-        { (5, 2), "Sit in the shell throne with reverence and stillness" }, // Correct one
+        { (5, 2), "Sit in the shell throne with reverence and stillness" },
         { (5, 3), "Search the cave floor for hidden relics or scrolls" },
         { (5, 4), "Speak aloud the kingdom’s name if you remember it from the mural" }
     };
@@ -55,7 +55,7 @@ public class LakeText
         { 2, 3 },
         { 3, 3 },
         { 4, 2 },
-        { 5, 2 }
+        { 5, 4 }
     };
 
     public static string GetScenarioText(int stage)

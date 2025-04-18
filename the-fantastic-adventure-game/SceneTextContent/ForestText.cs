@@ -23,9 +23,9 @@ public class ForestText
 
     private static readonly Dictionary<(int, int), string> OptionTexts = new()
     {
-        { (1, 1), "Touch one of the symbols on the stones, trying to activate its magic" },
+        { (1, 1), "Touch one of the symbols on the stones, trying to activate its magic" }, // Correct one
         { (1, 2), "Walk to the center of the stone circle to harness its power" },
-        { (1, 3), "Study the symbols from a distance, looking for patterns in their arrangement" }, // Correct one
+        { (1, 3), "Study the symbols from a distance, looking for patterns in their arrangement" },
         { (1, 4), "Take a small piece of stone as a souvenir to help on your journey" },
 
         { (2, 1), "Enter the hollow tree to investigate the source of the humming" },
@@ -51,7 +51,7 @@ public class ForestText
 
     private static readonly Dictionary<int, int> CorrectChoices = new()
     {
-        { 1, 3 },
+        { 1, 1 },
         { 2, 4 },
         { 3, 3 },
         { 4, 2 },
