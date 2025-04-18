@@ -26,16 +26,30 @@ namespace the_fantastic_adventure_game.Utils
 
         public static void ShowInventory()
         {
+            string folderPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Saves"));
+            string filePath = Path.Combine(folderPath, "inventory-save.txt");
+            
             Console.WriteLine("\n--- Your Inventory ---");
-            if (Inventory.Count == 0)
+
+            if (!File.Exists(filePath))
             {
                 Console.WriteLine("It's empty.");
+                return;
             }
-            else
+
+            var lines = File.ReadAllLines(filePath);
+            if (lines.Length == 0)
             {
-                foreach (var item in Inventory)
+                Console.WriteLine("It's empty.");
+                return;
+            }
+
+            foreach (var line in lines)
+            {
+                var parts = line.Split('|');
+                if (parts.Length == 2)
                 {
-                    Console.WriteLine($"- {item.Name}: {item.Description}");
+                    Console.WriteLine($"- {parts[0]}: {parts[1]}");
                 }
             }
         }
