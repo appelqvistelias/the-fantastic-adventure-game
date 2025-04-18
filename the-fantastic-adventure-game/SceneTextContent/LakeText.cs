@@ -6,7 +6,7 @@ public class LakeText
 
     public static string Death => "A sudden chill washes over you as the lake swells unnaturally. From its depths, something massive and unseen pulls you below. Darkness fills your lungs. The silence of the deep welcomes another soul. Your journey ends here.";
 
-    public static string Reward => "You stand at the heart of a hidden islet, the fog lifting to reveal a pedestal where the Relic of Tides rests. It pulses with aquatic energy, resonating with every drop of water around you. You have claimed the lake’s long-lost power.";
+    public static string Reward => "You stand at the heart of a hidden islet, the fog lifting to reveal a pedestal where the Panoply of the Drowned King rests. It pulses with aquatic energy, resonating with every drop of water around you. You have claimed the lake’s long-lost power.";
 
     private static readonly Dictionary<int, string> ScenarioDescriptions = new()
     {

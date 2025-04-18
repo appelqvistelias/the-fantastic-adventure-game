@@ -16,8 +16,8 @@ public class CaveScene
             CaveText.GetOptionText,
             CaveText.IsCorrectChoice,
             new Item(
-                "Crystal of Echoes",
-                "An ancient artifact radiating the power of Murmurdeep Caverns."
+                "Shadowfang Blade",
+                "A cursed weapon forged from the heart of a dying star, its obsidian edge thirsts for blood, shrouded in an eerie darkness that drains the life of those it strikes."
             ),
             5
         );

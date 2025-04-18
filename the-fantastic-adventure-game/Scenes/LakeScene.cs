@@ -16,8 +16,8 @@ public class LakeScene
             LakeText.GetOptionText,
             LakeText.IsCorrectChoice,
             new Item(
-                "Relic of Tides",
-                "An ancient artifact radiating the power of Lake Somberveil."
+                "Panoply of the Drowned King",
+                "An ancient, cursed armor forged from the depths of a lost kingdom, granting its wearer dominion over water, but at the cost of being haunted by the tragic echoes of the drowned king."
             ),
             5
         );

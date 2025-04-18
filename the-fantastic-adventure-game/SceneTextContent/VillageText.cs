@@ -6,7 +6,7 @@ public static class VillageText
 
     public static string Death => "A shadowy figure materializes out of thin air and drives a pitch-black dagger into your heart. You fall to the ground, your life slipping away instantly.";
 
-    public static string Reward => "You survived all the trials in the village and discovered a glowing Amulet of Insight! It hums with ancient power.";
+    public static string Reward => "You survived all the trials in the village and discovered Aegis of the Shattered Sun! It hums with ancient power.";
 
     private static readonly Dictionary<int, string> ScenarioDescriptions = new()
     {

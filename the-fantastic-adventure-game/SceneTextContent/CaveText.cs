@@ -6,7 +6,7 @@ public class CaveText
 
     public static string Death => "A deep rumble precedes the cave floor giving way beneath you. You fall into a chasm, the darkness swallowing your scream. The cave claims another soul. Your journey ends here.";
 
-    public static string Reward => "Having conquered all five trials of Murmurdeep, you enter a vast chamber where the Crystal of Echoes hovers above a dais, humming with ancient power. It shimmers with every sound you make. The artifact is yours – a reward for your courage and cunning.";
+    public static string Reward => "Having conquered all five trials of Murmurdeep, you enter a vast chamber where the Shadowfang Blade hovers above a massive rock formation, humming with ancient power. The artifact is yours – a reward for your courage and cunning.";
 
     private static readonly Dictionary<int, string> ScenarioDescriptions = new()
     {

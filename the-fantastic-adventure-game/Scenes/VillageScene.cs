@@ -16,8 +16,8 @@ public class VillageScene
             VillageText.GetOptionText,
             VillageText.IsCorrectChoice,
             new Item(
-                "Amulet of Insight",
-                "An ancient artifact radiating the power of Eldermoors ancestral memories."
+                "Aegis of the Shattered Sun",
+                "Forged from the remnants of a fallen celestial star, this shield gleams with an otherworldly radiance, imbuing its wielder with the power of light while offering protection against shadow and darkness, a relic of a forgotten age of gods."
             ),
             5
         );

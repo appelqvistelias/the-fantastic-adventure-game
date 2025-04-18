@@ -16,8 +16,8 @@ public class ForestScene
             ForestText.GetOptionText,
             ForestText.IsCorrectChoice,
             new Item(
-                "Mystical Forest Crystal",
-                "An ancient artifact radiating the power of the Shadow Wood."
+                "Mystical Forest Crystal Crown",
+                "A shimmering crown woven from ancient forest crystals, it channels the raw, untamed magic of the woods, granting its wearer control over nature’s forces and communion with the spirits of the forest."
             ),
             5
         );

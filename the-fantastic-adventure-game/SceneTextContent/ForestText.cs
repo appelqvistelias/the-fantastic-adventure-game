@@ -6,7 +6,7 @@ public class ForestText
 
     public static string Death => "The shadows between the trees suddenly coalesce, forming a monstrous shape that lunges at you. Your scream echoes briefly before being swallowed by the silence of the forest. Your quest ends here.";
 
-    public static string Reward => "Having passed all five trials of Shadow Wood Forest, the trees part to reveal a small pedestal. The mystical Forest Crystal rises from it, pulsing with emerald energy that resonates with the life of the woods. You've earned its power!";
+    public static string Reward => "Having passed all five trials of Shadow Wood Forest, the trees part to reveal a small pedestal. The mystical Forest Crystal Crown rises from it, pulsing with emerald energy that resonates with the life of the woods. You've earned its power!";
 
     private static readonly Dictionary<int, string> ScenarioDescriptions = new()
     {
