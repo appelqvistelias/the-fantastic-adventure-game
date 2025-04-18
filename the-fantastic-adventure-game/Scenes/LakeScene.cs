@@ -25,11 +25,11 @@ public class LakeScene
 
         Console.WriteLine(LakeText.Reward);
         Console.WriteLine("\nPress any key to return to the main menu.");
-        Console.ReadKey();
         GameUtils.AddToInventory(new Item(
             "Relic of Tides",
             "An ancient artifact radiating the power of Lake Somberveil."
         ));
+        Console.ReadKey();
         return true; // Finished the Village, but still return to main menu.
     }
 

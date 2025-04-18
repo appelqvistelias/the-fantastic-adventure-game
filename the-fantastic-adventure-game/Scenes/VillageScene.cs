@@ -1,5 +1,6 @@
 using the_fantastic_adventure_game.Utils;
 using the_fantastic_adventure_game.SceneTextContent;
+using the_fantastic_adventure_game.Items;
 
 namespace the_fantastic_adventure_game.Scenes;
 
@@ -17,6 +18,10 @@ public class VillageScene
             {
                 Console.WriteLine(VillageText.Death);
                 Console.WriteLine("\nPress any key to return to the main menu.");
+                GameUtils.AddToInventory(new Item(
+                    "Amulet of Insight",
+                    "An ancient artifact radiating the power of Eldermoors ancestral memories."
+                ));
                 Console.ReadKey();
                 return false; // Return to main menu
             }
