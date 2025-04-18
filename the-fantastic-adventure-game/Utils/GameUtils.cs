@@ -48,30 +48,27 @@ namespace the_fantastic_adventure_game.Utils
             return true; // Finished the scene
         }
         
-        private static List<Item> Inventory = new();
-
         public static void AddToInventory(Item item)
         {
-            Inventory.Add(item);
-            SaveInventoryToFile();
+            SaveItemToFile(item);
             Console.WriteLine($"\nYou received: {item.Name} - {item.Description}");
         }
-        
-        public static void SaveInventoryToFile()
+
+        public static void SaveItemToFile(Item item)
         {
             string folderPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Saves"));
             Directory.CreateDirectory(folderPath);
 
             string filePath = Path.Combine(folderPath, "inventory-save.txt");
-            var lines = Inventory.Select(item => $"{item.Name}|{item.Description}");
-            File.WriteAllLines(filePath, lines);
+    
+            File.AppendAllLines(filePath, new[] { $"{item.Name}|{item.Description}" });
         }
 
         public static void ShowInventory()
         {
             string folderPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Saves"));
             string filePath = Path.Combine(folderPath, "inventory-save.txt");
-            
+    
             Console.WriteLine("\n--- Your Inventory ---");
 
             if (!File.Exists(filePath))
