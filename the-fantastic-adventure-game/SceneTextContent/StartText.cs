@@ -29,7 +29,8 @@ namespace the_fantastic_adventure_game.Text
             Console.WriteLine("You are about to embark on a fantastic adventure!");
             Console.WriteLine();
             Console.WriteLine("1. Start the adventure");
-            Console.WriteLine("2. Exit the game");
+            Console.WriteLine("2. Show inventory");
+            Console.WriteLine("3. Exit the game");
         }
 
 
