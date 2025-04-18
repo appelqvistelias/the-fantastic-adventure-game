@@ -24,6 +24,9 @@ namespace the_fantastic_adventure_game.Scene
                         SelectScene();
                         break;
                     case "2":
+                        GameUtils.ShowInventory();
+                        break;
+                    case "3":
                         GameUtils.ShowExitMessage();
                         Environment.Exit(0);
                         break;
