@@ -24,6 +24,21 @@ public class Character
 
     public int Attack()
     {
-        return AttackDamage;
+        Random rng = new Random();
+        double multiplier = rng.NextDouble() * 0.4 + 0.8;
+        int finalDamage = (int)(AttackDamage * multiplier);
+
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.Write($"{Name} attacks for {finalDamage} damage!");
+
+        if (multiplier >= 1.15)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(" CRITICAL HIT!");
+        }
+
+        Console.ResetColor();
+        Console.WriteLine();
+        return finalDamage;
     }
 }
