@@ -30,7 +30,8 @@ namespace the_fantastic_adventure_game.Text
             Console.WriteLine();
             Console.WriteLine("1. Start the adventure");
             Console.WriteLine("2. Show inventory");
-            Console.WriteLine("3. Exit the game");
+            Console.WriteLine("3. Empty inventory");
+            Console.WriteLine("4. Exit the game");
         }
 
 

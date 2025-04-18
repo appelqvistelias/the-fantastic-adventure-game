@@ -29,6 +29,11 @@ namespace the_fantastic_adventure_game.Scene
                         Console.ReadKey();
                         break;
                     case "3":
+                        GameUtils.ClearInventory();
+                        Console.WriteLine("Press any key to return to main menu");
+                        Console.ReadKey();
+                        break;
+                    case "4":
                         GameUtils.ShowExitMessage();
                         Environment.Exit(0);
                         break;

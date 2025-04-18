@@ -1,129 +1,144 @@
 using the_fantastic_adventure_game.Items;
 
-namespace the_fantastic_adventure_game.Utils
+namespace the_fantastic_adventure_game.Utils;
 
+public static class GameUtils
 {
-    public static class GameUtils
+    public static bool PlayScene(
+        string intro,
+        string death, 
+        string reward,
+        Func<int, string> getScenarioText,
+        Func<int, int, string> getOptionText,
+        Func<int, int, bool> isCorrectChoice,
+        Item rewardItem,
+        int stageCount)
     {
-        public static bool PlayScene(
-            string intro,
-            string death, 
-            string reward,
-            Func<int, string> getScenarioText,
-            Func<int, int, string> getOptionText,
-            Func<int, int, bool> isCorrectChoice,
-            Item rewardItem,
-            int stageCount)
-        {
-            Console.Clear();
-            Console.WriteLine(intro);
-            Console.WriteLine();
+        Console.Clear();
+        Console.WriteLine(intro);
+        Console.WriteLine();
 
-            for (int stage = 1; stage <= stageCount; stage++)
+        for (int stage = 1; stage <= stageCount; stage++)
+        {
+            Console.WriteLine($"--- Scenario {stage} ---");
+            Console.WriteLine(getScenarioText(stage));
+
+            Console.WriteLine("\nWhat is your action?");
+            Console.WriteLine("1. " + getOptionText(stage, 1));
+            Console.WriteLine("2. " + getOptionText(stage, 2));
+            Console.WriteLine("3. " + getOptionText(stage, 3));
+            Console.WriteLine("4. " + getOptionText(stage, 4));
+
+            int choice = GetValidInput(1, 4);
+            
+            if (!isCorrectChoice(stage, choice))
             {
-                Console.WriteLine($"--- Scenario {stage} ---");
-                Console.WriteLine(getScenarioText(stage));
-
-                Console.WriteLine("\nWhat is your action?");
-                Console.WriteLine("1. " + getOptionText(stage, 1));
-                Console.WriteLine("2. " + getOptionText(stage, 2));
-                Console.WriteLine("3. " + getOptionText(stage, 3));
-                Console.WriteLine("4. " + getOptionText(stage, 4));
-
-                int choice = GetValidInput(1, 4);
-                
-                if (!isCorrectChoice(stage, choice))
-                {
-                    Console.WriteLine(death);
-                    Console.WriteLine("\nPress any key to return to the main menu.");
-                    Console.ReadKey();
-                    return false; // Return to main menu
-                }
+                Console.WriteLine(death);
+                Console.WriteLine("\nPress any key to return to the main menu.");
+                Console.ReadKey();
+                return false; // Return to main menu
             }
-
-            Console.WriteLine(reward);
-            AddToInventory(rewardItem);
-            Console.WriteLine("\nPress any key to return to the main menu.");
-            Console.ReadKey();
-            return true; // Finished the scene
-        }
-        
-        public static void AddToInventory(Item item)
-        {
-            SaveItemToFile(item);
-            Console.WriteLine($"\nYou received: {item.Name} - {item.Description}");
         }
 
-        public static void SaveItemToFile(Item item)
-        {
-            string folderPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Saves"));
-            Directory.CreateDirectory(folderPath);
-
-            string filePath = Path.Combine(folderPath, "inventory-save.txt");
+        Console.WriteLine(reward);
+        AddToInventory(rewardItem);
+        Console.WriteLine("\nPress any key to return to the main menu.");
+        Console.ReadKey();
+        return true; // Finished the scene
+    }
     
-            File.AppendAllLines(filePath, new[] { $"{item.Name}|{item.Description}" });
+    public static void AddToInventory(Item item)
+    {
+        SaveItemToFile(item);
+        Console.WriteLine($"\nYou received: {item.Name} - {item.Description}");
+    }
+
+    public static void SaveItemToFile(Item item)
+    {
+        string folderPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Saves"));
+        Directory.CreateDirectory(folderPath);
+
+        string filePath = Path.Combine(folderPath, "inventory-save.txt");
+
+        File.AppendAllLines(filePath, new[] { $"{item.Name}|{item.Description}" });
+    }
+
+    public static void ShowInventory()
+    {
+        string folderPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Saves"));
+        string filePath = Path.Combine(folderPath, "inventory-save.txt");
+
+        Console.WriteLine("\n--- Your Inventory ---");
+
+        if (!File.Exists(filePath))
+        {
+            Console.WriteLine("Your inventory lies barren — venture forth and claim the treasures that await!");
+            return;
         }
 
-        public static void ShowInventory()
+        var lines = File.ReadAllLines(filePath);
+        if (lines.Length == 0)
         {
-            string folderPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Saves"));
-            string filePath = Path.Combine(folderPath, "inventory-save.txt");
+            Console.WriteLine("Your inventory lies barren — venture forth and claim the treasures that await!");
+            return;
+        }
+
+        foreach (var line in lines)
+        {
+            var parts = line.Split('|');
+            if (parts.Length == 2)
+            {
+                Console.WriteLine($"- {parts[0]}: {parts[1]}");
+            }
+        }
+    }
     
-            Console.WriteLine("\n--- Your Inventory ---");
+    public static void ClearInventory()
+    {
+        string folderPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Saves"));
+        string filePath = Path.Combine(folderPath, "inventory-save.txt");
 
-            if (!File.Exists(filePath))
-            {
-                Console.WriteLine("It's empty.");
-                return;
-            }
-
-            var lines = File.ReadAllLines(filePath);
-            if (lines.Length == 0)
-            {
-                Console.WriteLine("It's empty.");
-                return;
-            }
-
-            foreach (var line in lines)
-            {
-                var parts = line.Split('|');
-                if (parts.Length == 2)
-                {
-                    Console.WriteLine($"- {parts[0]}: {parts[1]}");
-                }
-            }
-        }
-        public static void ShowInvalidChoice()
+        if (File.Exists(filePath))
         {
-            Console.WriteLine("Invalid choice, please try again.");
+            File.WriteAllText(filePath, string.Empty);
+            Console.WriteLine("\nWith a solemn breath and a warrior’s resolve, you cast your burdens to the earth. Steel clatters, trinkets tumble, and the weight of past conquests is relinquished. The wind howls in approval as your pack grows light — not from loss, but from purpose. You are unshackled, unburdened... ready to carve your legend anew.");
         }
-
-        public static void ShowExitMessage()
+        else
         {
-            Console.WriteLine("Thank you for playing The Fantastic Adventure Game. Goodbye!");
+            Console.WriteLine("\nYour inventory lies barren — venture forth and claim the treasures that await!");
         }
+    }
+    
+    public static void ShowInvalidChoice()
+    {
+        Console.WriteLine("Invalid choice, please try again.");
+    }
 
-        public static int GetValidInput(int min, int max)
+    public static void ShowExitMessage()
+    {
+        Console.WriteLine("Thank you for playing The Fantastic Adventure Game. Goodbye!");
+    }
+
+    public static int GetValidInput(int min, int max)
+    {
+        int choice;
+        bool valid = false;
+
+        do
         {
-            int choice;
-            bool valid = false;
+            Console.Write("> ");
+            string? input = Console.ReadLine();
 
-            do
+            if (int.TryParse(input, out choice) && choice >= min && choice <= max)
             {
-                Console.Write("> ");
-                string? input = Console.ReadLine();
+                valid = true;
+            }
+            else
+            {
+                ShowInvalidChoice();
+            }
+        } while (!valid);
 
-                if (int.TryParse(input, out choice) && choice >= min && choice <= max)
-                {
-                    valid = true;
-                }
-                else
-                {
-                    ShowInvalidChoice();
-                }
-            } while (!valid);
-
-            return choice;
-        }
+        return choice;
     }
 }
