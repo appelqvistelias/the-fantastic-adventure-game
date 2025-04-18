@@ -4,8 +4,8 @@ public class Character
 {
     public string Name { get; }
     public int Health { get; set; }
-    public int AttackDamage { get; }
-    public int Defense { get; }
+    public int AttackDamage { get; set; }
+    public int Defense { get; set; }
 
     public Character(string name, int health, int attackDamage, int defense)
     {
