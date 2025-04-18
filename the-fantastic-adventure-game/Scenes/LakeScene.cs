@@ -19,7 +19,7 @@ public class LakeScene
                 "Relic of Tides",
                 "An ancient artifact radiating the power of Lake Somberveil."
             ),
-            5 // Number of stages
+            5
         );
     }
 }

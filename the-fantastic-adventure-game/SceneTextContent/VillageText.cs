@@ -8,8 +8,7 @@ public static class VillageText
 
     public static string Reward => "You survived all the trials in the village and discovered a glowing Amulet of Insight! It hums with ancient power.";
 
-    // Scenario texts
-    private static readonly Dictionary<int, string> ScenarioDescriptions = new() // Connecting stage (int) to string
+    private static readonly Dictionary<int, string> ScenarioDescriptions = new()
     {
         { 1, "You reach the town square. A large statue stands in the center, and villagers are whispering about a shadow seen last night." },
         { 2, "You walk down a narrow street and encounter a mysterious old woman sitting by the side. She beckons you over." },
@@ -18,10 +17,8 @@ public static class VillageText
         { 5, "You come across a well in the middle of the village. The water inside seems unusually dark, and something glimmers at the bottom." }
     };
 
-    // Options for each scenario
-    private static readonly Dictionary<(int, int), string> OptionTexts = new() // Connecting stage (int) to choice
+    private static readonly Dictionary<(int, int), string> OptionTexts = new()
     {
-        // Format: {(stage, option), "option text"}
         { (1, 1), "Inspect the statue closely" },
         { (1, 2), "Ask the villagers about the shadow" },
         { (1, 3), "Climb onto a rooftop to get a better view" },
@@ -48,14 +45,13 @@ public static class VillageText
         { (5, 4), "Leave the well and walk away" }
     };
 
-    // Correct choices per stage
-    private static readonly Dictionary<int, int> CorrectChoices = new() // Connecting each choice to the correct answers
+    private static readonly Dictionary<int, int> CorrectChoices = new()
     {
-        { 1, 4 },  // Correct choice for scenario 1
-        { 2, 2 },  // Correct choice for scenario 2
-        { 3, 4 },  // Correct choice for scenario 3
-        { 4, 4 },  // Correct choice for scenario 4
-        { 5, 3 }   // Correct choice for scenario 5
+        { 1, 4 },
+        { 2, 2 },
+        { 3, 4 },
+        { 4, 4 },
+        { 5, 3 }
     };
 
     public static string GetScenarioText(int stage)

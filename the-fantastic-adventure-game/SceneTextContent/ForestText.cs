@@ -8,8 +8,7 @@ public class ForestText
 
     public static string Reward => "Having passed all five trials of Shadow Wood Forest, the trees part to reveal a small pedestal. The mystical Forest Crystal rises from it, pulsing with emerald energy that resonates with the life of the woods. You've earned its power!";
 
-    // Scenario texts
-    private static readonly Dictionary<int, string> ScenarioDescriptions = new() // Connecting stage (int) to string
+    private static readonly Dictionary<int, string> ScenarioDescriptions = new()
     {
         { 1, "At the forest entrance, you come across a clearing with a circle of ancient standing stones. Strange symbols are carved into each stone, and moonlight filters through the trees to illuminate them. According to legend, this is the Guardian's Gate, the first trial of Shadow Wood." },
         
@@ -22,10 +21,8 @@ public class ForestText
         { 5, "The embers' light guided you through the darkness to a moss-covered shrine partially reclaimed by the forest. This is the ancient Shrine of Verdant Truth, the final guardian of the Forest Crystal. A weathered statue of a forest spirit stands in the center, its eyes seeming to follow your movements." }
     };
 
-    // Options for each scenario
-    private static readonly Dictionary<(int, int), string> OptionTexts = new() // Connecting stage (int) to choice
+    private static readonly Dictionary<(int, int), string> OptionTexts = new()
     {
-        // Format: {(stage, option), "option text"}
         { (1, 1), "Touch one of the symbols on the stones, trying to activate its magic" },
         { (1, 2), "Walk to the center of the stone circle to harness its power" },
         { (1, 3), "Study the symbols from a distance, looking for patterns in their arrangement" }, // Correct one
@@ -52,14 +49,13 @@ public class ForestText
         { (5, 4), "Assert your dominance by staring back into the statue's eyes" }
     };
 
-    // Correct choices per stage
-    private static readonly Dictionary<int, int> CorrectChoices = new() // Connecting each choice to the correct answers
+    private static readonly Dictionary<int, int> CorrectChoices = new()
     {
-        { 1, 3 },  // Correct choice for scenario 1
-        { 2, 4 },  // Correct choice for scenario 2
-        { 3, 3 },  // Correct choice for scenario 3
-        { 4, 2 },  // Correct choice for scenario 4
-        { 5, 1 }   // Correct choice for scenario 5
+        { 1, 3 },
+        { 2, 4 },
+        { 3, 3 },
+        { 4, 2 },
+        { 5, 1 }
     };
 
     public static string GetScenarioText(int stage)

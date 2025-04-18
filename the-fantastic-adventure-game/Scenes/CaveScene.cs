@@ -19,7 +19,7 @@ public class CaveScene
                 "Crystal of Echoes",
                 "An ancient artifact radiating the power of Murmurdeep Caverns."
             ),
-            5 // Number of stages
+            5
         );
     }
 }

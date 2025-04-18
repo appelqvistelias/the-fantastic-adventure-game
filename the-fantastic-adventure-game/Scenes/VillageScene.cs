@@ -19,7 +19,7 @@ public class VillageScene
                 "Amulet of Insight",
                 "An ancient artifact radiating the power of Eldermoors ancestral memories."
             ),
-            5 // Number of stages
+            5
         );
     }
 }

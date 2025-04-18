@@ -19,7 +19,7 @@ public class ForestScene
                 "Mystical Forest Crystal",
                 "An ancient artifact radiating the power of the Shadow Wood."
             ),
-            5 // Number of stages
+            5
         );
     }
 }

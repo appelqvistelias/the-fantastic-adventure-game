@@ -8,7 +8,6 @@ public class CaveText
 
     public static string Reward => "Having conquered all five trials of Murmurdeep, you enter a vast chamber where the Crystal of Echoes hovers above a dais, humming with ancient power. It shimmers with every sound you make. The artifact is yours – a reward for your courage and cunning.";
 
-    // Scenario texts
     private static readonly Dictionary<int, string> ScenarioDescriptions = new()
     {
         { 1, "At the cave entrance, you find a chamber ringed with towering crystal pillars. Strange hums resonate from each one, vibrating the air. This is the Echo Nexus, the first trial of Murmurdeep." },
@@ -22,7 +21,6 @@ public class CaveText
         { 5, "At last, you reach a sealed chamber where an ancient altar stands beneath a ceiling of jagged stalactites. A skeletal figure draped in tattered robes kneels before it, unmoving. The fifth and final trial awaits your judgment." }
     };
 
-    // Options for each scenario
     private static readonly Dictionary<(int, int), string> OptionTexts = new()
     {
         { (1, 1), "Strike one of the crystal pillars to test its resonance" },
