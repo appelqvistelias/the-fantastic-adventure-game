@@ -1,5 +1,6 @@
 using the_fantastic_adventure_game.Utils;
 using the_fantastic_adventure_game.SceneTextContent;
+using the_fantastic_adventure_game.Items;
 
 namespace the_fantastic_adventure_game.Scenes;
 
@@ -25,6 +26,10 @@ public class LakeScene
         Console.WriteLine(LakeText.Reward);
         Console.WriteLine("\nPress any key to return to the main menu.");
         Console.ReadKey();
+        GameUtils.AddToInventory(new Item(
+            "Relic of Tides",
+            "An ancient artifact radiating the power of Lake Somberveil."
+        ));
         return true; // Finished the Village, but still return to main menu.
     }
 
