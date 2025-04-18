@@ -68,6 +68,15 @@ public static class GameUtils
 
         File.AppendAllLines(filePath, new[] { $"{item.Name}|{item.Description}" });
     }
+    
+    public static bool HasItem(string itemName)
+    {
+        string filePath = Path.Combine(GetSavesFolderPath(), "inventory-save.txt");
+
+        if (!File.Exists(filePath)) return false;
+
+        return File.ReadLines(filePath).Any(line => line.StartsWith(itemName + "|"));
+    }
 
     public static void ShowInventory()
     {
