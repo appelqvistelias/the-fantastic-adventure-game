@@ -130,7 +130,9 @@ public class StartScene
                         GameUtils.HasItem("Panoply of the Drowned King"))
                     {
                         Console.WriteLine("\nYou feel a strange pull... something greater awaits.");
-                        // Add final encounter
+                        Console.WriteLine("Press any key to give into the irresistible pull");
+                        Console.ReadKey();
+                        FinalEncounter.Play();
                     }
                     else
                     {
