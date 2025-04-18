@@ -49,15 +49,19 @@ public class FinalEncounter
             }
             else if (choice == 2 && !defenseIncreased)
             {
-                player.Defense += 20;
+                player.Defense += 15;
                 defenseIncreased = true;
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("\nYou become a bulwark of might!");
+                Console.ResetColor();
             }
             else if (choice == 3 && !damageIncreased)
             {
-                player.AttackDamage += 20;
+                player.AttackDamage += 15;
                 damageIncreased = true;
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("\nYour strikes thunder with the might of the forests and darkness!");
+                Console.ResetColor();
             }
 
             Console.WriteLine("\nPress any key to continue...");

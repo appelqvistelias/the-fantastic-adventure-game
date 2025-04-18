@@ -51,6 +51,7 @@ public class StartScene
         while (selecting)
         {
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("\nChoose a location to explore:");
             Console.WriteLine("1. The Village of Eldermoor");
             Console.WriteLine("2. The Dark Forest of Shadow Wood");
@@ -66,7 +67,9 @@ public class StartScene
                 case 1:
                     if (GameUtils.HasItem("Aegis of the Shattered Sun"))
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("\nYou’ve already completed The Village of Eldermoor.");
+                        Console.ResetColor();
                         Console.WriteLine("Press any key to choose another location.");
                         Console.ReadKey();
                     }
@@ -81,7 +84,9 @@ public class StartScene
                 case 2:
                     if (GameUtils.HasItem("Mystical Forest Crystal Crown"))
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("\nYou’ve already completed The Dark Forest of Shadow Wood.");
+                        Console.ResetColor();
                         Console.WriteLine("Press any key to choose another location.");
                         Console.ReadKey();
                     }
@@ -96,7 +101,9 @@ public class StartScene
                 case 3:
                     if (GameUtils.HasItem("Shadowfang Blade"))
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("\nYou’ve already completed Murmurdeep Caverns.");
+                        Console.ResetColor();
                         Console.WriteLine("Press any key to choose another location.");
                         Console.ReadKey();
                     }
@@ -111,7 +118,9 @@ public class StartScene
                 case 4:
                     if (GameUtils.HasItem("Panoply of the Drowned King"))
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("\nYou’ve already completed The Murky Lake of Somberveil.");
+                        Console.ResetColor();
                         Console.WriteLine("Press any key to choose another location.");
                         Console.ReadKey();
                     }
@@ -129,14 +138,18 @@ public class StartScene
                         GameUtils.HasItem("Shadowfang Blade") &&
                         GameUtils.HasItem("Panoply of the Drowned King"))
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.WriteLine("\nYou feel a strange pull... something greater awaits.");
+                        Console.ResetColor();
                         Console.WriteLine("Press any key to give into the irresistible pull");
                         Console.ReadKey();
                         FinalEncounter.Play();
                     }
                     else
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("\nNothing happens. Perhaps you're not ready yet...");
+                        Console.ResetColor();
                         Console.WriteLine("Press any key to choose another location.");
                         Console.ReadKey();
                     }
