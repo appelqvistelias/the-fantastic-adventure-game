@@ -47,6 +47,13 @@ public static class GameUtils
         return true; // Finished the scene
     }
     
+    private static string GetSavesFolderPath()
+    {
+        string folderPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Saves"));
+        Directory.CreateDirectory(folderPath);
+        return folderPath;
+    }
+    
     public static void AddToInventory(Item item)
     {
         SaveItemToFile(item);
@@ -55,8 +62,7 @@ public static class GameUtils
 
     public static void SaveItemToFile(Item item)
     {
-        string folderPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Saves"));
-        Directory.CreateDirectory(folderPath);
+        string folderPath = GetSavesFolderPath();
 
         string filePath = Path.Combine(folderPath, "inventory-save.txt");
 
@@ -65,7 +71,7 @@ public static class GameUtils
 
     public static void ShowInventory()
     {
-        string folderPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Saves"));
+        string folderPath = GetSavesFolderPath();
         string filePath = Path.Combine(folderPath, "inventory-save.txt");
 
         Console.WriteLine("\n--- Your Inventory ---");
@@ -95,7 +101,7 @@ public static class GameUtils
     
     public static void ClearInventory()
     {
-        string folderPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Saves"));
+        string folderPath = GetSavesFolderPath();
         string filePath = Path.Combine(folderPath, "inventory-save.txt");
 
         if (File.Exists(filePath))
@@ -109,16 +115,6 @@ public static class GameUtils
         }
     }
     
-    public static void ShowInvalidChoice()
-    {
-        Console.WriteLine("Invalid choice, please try again.");
-    }
-
-    public static void ShowExitMessage()
-    {
-        Console.WriteLine("Thank you for playing The Fantastic Adventure Game. Goodbye!");
-    }
-
     public static int GetValidInput(int min, int max)
     {
         int choice;
@@ -140,5 +136,15 @@ public static class GameUtils
         } while (!valid);
 
         return choice;
+    }
+    
+    public static void ShowInvalidChoice()
+    {
+        Console.WriteLine("Invalid choice, please try again.");
+    }
+
+    public static void ShowExitMessage()
+    {
+        Console.WriteLine("Thank you for playing The Fantastic Adventure Game. Goodbye!");
     }
 }
