@@ -10,7 +10,18 @@ namespace the_fantastic_adventure_game.Utils
         public static void AddToInventory(Item item)
         {
             Inventory.Add(item);
+            SaveInventoryToFile();
             Console.WriteLine($"\nYou received: {item.Name} - {item.Description}");
+        }
+        
+        public static void SaveInventoryToFile()
+        {
+            string folderPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Saves"));
+            Directory.CreateDirectory(folderPath);
+
+            string filePath = Path.Combine(folderPath, "inventory-save.txt");
+            var lines = Inventory.Select(item => $"{item.Name}|{item.Description}");
+            File.WriteAllLines(filePath, lines);
         }
 
         public static void ShowInventory()
